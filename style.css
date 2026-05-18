@@ -439,6 +439,23 @@ ul {
     display: none;
 }
 
+#bestSellersDesktop{
+    display: none;
+}
+
+#bestSellersDesktop h1{
+    padding-bottom: 64px;
+}
+
+#bestSellersContainer{
+    display: flex;
+    gap: 124px;
+}
+
+#deliveryDesktop{
+    display: none;
+}
+
 @media (min-width: 768px) {
     :root{
         --headerTextSize: 64px;
@@ -451,12 +468,22 @@ ul {
     body{
         margin: var(--bodyMargin);
         margin-top: 192px;
+        margin-bottom: 32px;
     }
 
     nav{
         padding:
             calc(var(--padding12px) * 2)
             var(--bodyMargin);
+    }
+
+    .footer p{
+        font-size: 16px;
+    }
+
+    .menuItemPrice{
+        font-size: 16px;
+        padding-bottom: 64px;
     }
 
     #mainContainer{
@@ -505,15 +532,87 @@ ul {
         display: block;
     }
 
-    #desktopMenuShowcase div {
+    #desktopMenuShowcase > div:first-child {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         width: 55%;
+        padding-bottom: 124px;
+    }
+
+    #desktopMenuShowcase div h1{
+        padding-bottom: 64px;
     }
 
     #menuShowcaseDesktop{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    #bestSellersDesktop{
+        display: block;
+    }
+
+    #bestSellersMobile{
+        display: none;
+    }
+
+    #deliveryMobile{
+        display: none;
+    }
+
+    #deliveryDesktop{
+        display: flex;
+    }
+
+    #deliveryDesktop img{
+        width: 92vw;
+        height: auto;
+    }
+
+    #innerHomeContactContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #innerHomeContactContainer > div:last-child{
+        width: 40%;
+    }
+
+    #homeContactContainer{
+        padding-bottom: 124px;
+    }
+
+    #homeContactContainer h1{
+        padding-bottom: 64px;
+    }
+
+    #contactBtn{
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1440px) {
+
+        :root{
+        --headerTextSize: 94px;
+        --header2TextSize: 48px;
+        --paragraphTextSize: 19px;
+
+        --bodyMargin: 12vw;
+    }
+
+    p{
+        font-size: var(--paragraphTextSize);
+    }
+    
+    body{
+        margin: var(--bodyMargin);
+        margin-top: 138px;
+        margin-bottom: 32px;
+    }
+
+    #introductionDesktop img{
+        width: 48vw;
     }
 }
