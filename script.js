@@ -1,6 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-  const showcase = document.getElementById("menuShowcase");
+  let showcase;
+  
+  if (window.innerWidth > 768) {
+    showcase = document.getElementById("menuShowcaseDesktop");
+  } else {
+    showcase = document.getElementById("menuShowcase");
+  }
 
   const menuItems = [
     {
@@ -53,4 +59,80 @@ window.addEventListener("DOMContentLoaded", () => {
     showcase.appendChild(menuItem);
   });
 
+});
+
+
+
+const elements = document.querySelectorAll(
+    "#mainContainer h1, \
+     #mainContainer h2, \
+     #mainContainer h3, \
+     #mainContainer p, \
+     #mainContainer img, \
+     #mainContainer button, \
+     #mainContainer a, \
+     #mainContainer div"
+);
+
+elements.forEach((element) => {
+
+    // Save original opacity
+    const originalOpacity = getComputedStyle(element).opacity;
+
+    element.style.setProperty(
+        "--original-opacity",
+        originalOpacity
+    );
+
+    element.classList.add("animate");
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+
+    });
+}, {
+    threshold: 0.15
+});
+
+elements.forEach((element) => {
+    observer.observe(element);
+});
+
+
+
+
+const nav = document.querySelector("nav");
+
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY <= 50) {
+        nav.classList.remove("hideNav");
+    }
+    else if (window.scrollY > lastScrollY) {
+        // scrolling down
+        nav.classList.add("hideNav");
+    }
+    else {
+        // scrolling up
+        nav.classList.remove("hideNav");
+    }
+
+    lastScrollY = window.scrollY;
+
+});
+
+const navBtn = document.querySelector("#navBtn");
+const sideMenu = document.querySelector("#sideMenu");
+
+navBtn.addEventListener("click", () => {
+    sideMenu.classList.toggle("showMenu");
 });

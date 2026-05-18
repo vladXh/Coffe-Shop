@@ -10,18 +10,50 @@
 
 <body>
   <nav id="mobileNav">
-    <button>
-      <img src="icons/back_arrow.svg" alt="">
-    </button>
+    <a href="#" id="navLogo">
+      <img src="icons/logo.svg" alt="">
+    </a>
 
-    <button>
+    <button id="navBtn">
       <img src="icons/three_lines.svg" alt="">
     </button>
   </nav>
 
+  <div id="sideMenu">
+    <ul>
+      <li><a href="#">
+        <img src="icons/logo.svg" alt="">
+      </a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+
+
+  <nav id="desktopNav">
+    <div id="desktopNavLogo">
+      <a href="#">
+        <img src="icons/logo.svg" alt="">
+        <p>Amour Café</p>
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#" class="hollowBtn">Contact</a></li>
+    </ul>
+  </nav>
+
   <div id="mainContainer">
     
-    <div class="sectionContainer">
+    <div class="sectionContainer" id="introductionMobile">
       <div>
         <h1>Amour</h1>
         <h1>Delicious Café</h1>
@@ -40,8 +72,31 @@
       </div>
     </div>
     
+    <div class="sectionContainer" id="introductionDesktop">
+      <div class="spaceItems">
+        <div>
+          <h1>Amour</h1>
+          <h1>Delicious Café</h1>
+        </div>
+        
+        <p>
+          Built on simplicity and driven by taste, every cup offers a smooth, balanced experience that fits naturally into your routine.
+        </p>
+      
+        <div id="heroBtns">
+          <a class="hollowBtn" href="#">Download App</a>
 
-    <div class="sectionContainer">
+          <a class="link" href="#">Shop Now</a>
+        </div>
+
+      </div>
+
+      <img src="homePageImages/coffe_img_1.png" alt="">
+    </div>
+
+
+
+    <div class="sectionContainer" id="mobileIntroduction2">
       <h1>Order Your Favourites</h1>
       <img src="homePageImages/pic2.png" alt="">
       
@@ -49,9 +104,25 @@
       
       <a class="hollowBtn" href="#">Order Now</a>
     </div>
-  
+    
+    <div class="sectionContainer" id="desktopIntroduction2">
+      
+      <img src="homePageImages/pic2.png" alt="">
+      
+      <div class="spaceItems">
+        <h1>Order Your Favourits</h1>
 
-    <div class="sectionContainer">
+        <p>Choose from our signature blends and handcrafted drinks, prepared with care and delivered fresh to make every moment feel a little more special.</p>
+
+        <a class="hollowBtn" href="#">Order Now</a>
+      </div>
+
+    </div>
+
+
+
+    <div class="sectionContainer" id="mobileMenuShowcase">
+
       <h1>Explore our Amour</h1>
 
       <p class="centerText">From smooth classics to bold signatures, explore coffee made with intention, where every detail is refined for a clean, satisfying experience</p>
@@ -72,6 +143,34 @@
         -->
       </div>
     </div>
+
+    <div class="sectionContainer" id="desktopMenuShowcase">
+
+      <div>
+        <h1 class="centerText">Explore our Amour</h1>
+
+        <p class="centerText">From smooth classics to bold signatures, explore coffee made with intention, where every detail is refined for a clean, satisfying experience</p>
+      </div>
+      
+      
+      <div id="menuShowcaseDesktop">
+        <!--
+        <a class="menuItem" href="#">
+          <img src="menuItems/pic1 1.png" alt="">
+          
+          <div class="menuItemText">
+
+            <p class="fullOpacity">Noir Tiramisu</p>
+            <img class="menu5Stars" src="icons/5stars.svg" alt="">
+            <p class="menuItemPrice">12,99 $</p>
+
+          </div>
+        </a>
+        -->
+      </div>
+    </div>
+
+
     
     <div class="sectionContainer">
       <h1>Our Best Sellers</h1>
@@ -124,23 +223,23 @@
     <div class="sectionContainer" id="homeContactContainer">
       <h1>Get In Touch</h1>
       <div>
-        <div>
+        <div class="homeContactSection">
           <p>Email:</p>
           <p class="homeContact">cafe@amourcafe.com</p>
         </div>
 
-        <div>
+        <div class="homeContactSection">
           <p>Phone:</p>
           <p class="homeContact">+33 1 84 72 56 91</p>
         </div>
 
-        <div>
+        <div class="homeContactSection">
           <p>Address:</p>
           <p class="homeContact">18 Rue de Lumière, Paris, France</p>
         </div>
 
         <div>
-          <p>Follow Us:</p>
+          <p id="socialMediaContact">Follow Us:</p>
           <div class="homeContact">
             <a href="#">
               <img src="icons/instagram.svg" alt="">
@@ -158,9 +257,32 @@
         </div>
       </div>
 
+      <div id="contactInputContainer">
+        <input type="text" name="Name" id="homePageContactName" placeholder="Your Name">
 
+        <input type="text" name="Email" id="homePageContactEmail" placeholder="Your Email">
+
+        <input type="text" name="Message" id="homePageContactMessage" placeholder="Write Something...">
+      </div>
+
+      <button class="hollowBtn" id="contactBtn">Send Message</button>
     </div>
     
+    <div class="footer">
+      <img src="icons/logo.svg" alt="">
+      
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
+      <div class="spacer"></div>
+
+      <p>© 2026 Amour Café. All rights reserved.</p>
+    </div>
   </div>
 
   <script src="script.js"></script>

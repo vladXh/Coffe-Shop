@@ -20,6 +20,7 @@
 body{
     margin: 12px;
     margin-right: 16px;
+    margin-top: 92px;
     overflow-x: hidden;
 }
 
@@ -48,19 +49,63 @@ button{
     background: none;
     border: none;
 }
-
 nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
-    padding-top: calc(var(--padding12px) * 2);
-    padding-bottom: var(--padding72px);
+    align-items: center;
+
+    padding:
+        calc(var(--padding12px) * 2)
+        var(--padding24px);
+
+    box-sizing: border-box;
+
+    background: white;
+
+    z-index: 1000;
+
+    transition: transform 0.4s ease;
 }
+
+nav button img{
+    padding-right: 16px;
+}
+nav a{
+    opacity: 1;
+}
+nav a img{
+    padding: 12px;
+}
+
+nav.hideNav{
+    transform: translateY(-100%);
+}
+
 
 a{
     font-family: 'Familijen-Grotesk';
     text-decoration: none;
     color: black;
     opacity: .5;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-family: 'Familijen-Grotesk';
+  font-size: var(--paragraphTextSize);
+}
+
+ul {
+  list-style: none;
 }
 
 .hide{
@@ -118,6 +163,19 @@ a{
     text-decoration: underline;
 }
 
+.spacer{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.spaceItems{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .menuItem{
     display: flex;
     flex-direction: column;
@@ -146,6 +204,20 @@ a{
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
+}
+.animate{
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animate.show{
+    opacity: var(--original-opacity);
+    transform: translateY(0);
 }
 
 .bestSellerContainer{
@@ -183,6 +255,102 @@ a{
     opacity: 1;
 }
 
+.homeContact img{
+    width: 32px;
+    height: auto;
+    padding-right: 6px;
+}
+
+.homeContactSection{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.homeContactSection p{
+    font-size: var(--paragraphTextSize);
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.footer img{
+    width: 48px;
+    height: auto;
+    opacity: 0.5;
+}
+
+.footer ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.footer p{
+    font-size: 12px;
+    padding-bottom: 48px;
+}
+
+#navLogo img{
+    width: 42px;
+    height: auto;
+}
+
+#sideMenu{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 75%;
+    height: 100vh;
+
+    background: white;
+
+    z-index: 2000;
+
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+
+    padding: 48px 24px;
+
+    box-sizing: border-box;
+}
+
+#sideMenu.showMenu{
+    transform: translateX(0);
+}
+
+#sideMenu ul{
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 38px;
+}
+
+#sideMenu img{
+    width: 32px;
+    height: auto;
+}
+
+#sideMenu a{
+    font-size: var(--paragraphTextSize);
+}
+
 #mainContainer{
     display: flex;
     flex-direction: column;
@@ -202,8 +370,150 @@ a{
     gap: 24px;
 }
 
-#homeContactContainer{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 24px;
+#homeContactContainer div:not(:last-child){
+    padding-bottom: 24px;
+}
+
+#socialMediaContact{
+    padding-bottom: 12px;
+}
+
+#contactInputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 76px;
+}
+
+#contactBtn{
+    width: 100%;
+}
+
+#desktopNav{
+    display: none;
+    justify-items: space-around;
+}
+
+#desktopNav ul{
+    display: flex;
+    gap: 48px;
+}
+
+#desktopNav ul a{
+    font-size: var(--paragraphTextSize);
+}
+
+#desktopNavLogo a{
+    display: flex;
+    align-items: center;
+}
+
+#desktopNavLogo a p{
+    font-size: var(--paragraphTextSize);
+    opacity: 1;
+}
+
+#desktopNavLogo img{
+    width: 42px;
+    height: auto;
+}
+
+#introductionDesktop{
+    display: none;
+}
+
+#introductionDesktop img{
+    width: 72vw;
+    height: auto;
+}
+
+#desktopIntroduction2{
+    display: none;
+}
+
+#desktopIntroduction2 img{
+    width: 121vw;
+    height: auto;
+}
+
+#desktopMenuShowcase{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    :root{
+        --headerTextSize: 64px;
+        --header2TextSize: 48px;
+        --paragraphTextSize: 18px;
+
+        --bodyMargin: 12vw;
+    }
+    
+    body{
+        margin: var(--bodyMargin);
+        margin-top: 192px;
+    }
+
+    nav{
+        padding:
+            calc(var(--padding12px) * 2)
+            var(--bodyMargin);
+    }
+
+    #mainContainer{
+        gap: 164px;
+    }
+
+    #introductionMobile{
+        display: none;
+    }
+
+    #introductionDesktop{
+        display: flex;
+        align-items: center;
+    }
+
+    #mobileNav{
+        display: none;
+    }
+
+    #desktopNav{
+        display: flex;
+    }
+
+    #heroBtns{
+        justify-content: left;
+    }
+    
+    #heroBtns a{
+        margin-right: 48px;
+    }
+
+    #mobileIntroduction2{
+        display: none;
+    }
+    
+    #desktopIntroduction2{
+        display: flex;
+        align-items: center;
+    }
+
+    #mobileMenuShowcase{
+        display: none;
+    }
+
+    #desktopMenuShowcase{
+        display: block;
+    }
+
+    #desktopMenuShowcase div {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 55%;
+    }
+
+    #menuShowcaseDesktop{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
